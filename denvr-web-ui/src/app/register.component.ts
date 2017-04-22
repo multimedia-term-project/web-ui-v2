@@ -8,5 +8,7 @@ import {user} from './user';
   styleUrls: ['./app.component.css']
 })
 export class registerComponent {
-  title = 'register fool!';
+  newuser(){
+    console.log(user.name, user.password, user.email);
+  }
 }
