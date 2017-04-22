@@ -3,7 +3,8 @@ import {user} from './user';
 
 @Component({
   selector: 'app-root',
-  template: '',
+
+  templateUrl: 'register.html',
   styleUrls: ['./app.component.css']
 })
 export class registerComponent {
