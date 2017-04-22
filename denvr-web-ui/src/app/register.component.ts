@@ -10,7 +10,7 @@ import {user} from './user';
 export class registerComponent {
   user = new user('','','');
 
-  newuser(userName, password, email){
+  newUser(userName, password, email){
     console.log(userName, password, email);
   }
 }
