@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import {user} from './user';
 
 @Component({
   selector: 'app-root',
-  template: '<h1> what up </h1>',
+  template: '',
   styleUrls: ['./app.component.css']
 })
 export class registerComponent {
