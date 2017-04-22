@@ -5,11 +5,11 @@
   <form id="register-form" method="POST" action="/register">
     <label>Denvr</label>
     <br>
-    <input type="text" name="userName" class="form-control" id="userName" placeholder="Enter username">
-    <input type="password" name="password" class="form-control" id="password" placeholder="Enter password">
-    <input type="email" name="email" class="form-control" id="email" placeholder="Enter email">
-    <input type="email" name="confirmEmail" class="form-control" id="confirmEmail" placeholder="Confirm email">
-    <button class="login">Register</button>
+    <input [(ngModel)]="model.name" type="text" name="userName" class="form-control" id="userName" placeholder="Enter username">
+    <input [(ngModel)]="model.password" type="password" name="password" class="form-control" id="password" placeholder="Enter password">
+    <input [(ngModel)]="model.email" type="email" name="email" class="form-control" id="email" placeholder="Enter email">
+    <input [(ngModel)]="model.confirmEmail" type="email" name="confirmEmail" class="form-control" id="confirmEmail" placeholder="Confirm email">
+    <button class="login" (click)="newHero();">Register</button>
     <a href="login"> Or Login</a>
   </form>
 </div>
