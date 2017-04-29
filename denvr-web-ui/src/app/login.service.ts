@@ -23,7 +23,7 @@ import {serverResponse} from './serverResponse';
        let headers = new Headers({ 'Content-Type': 'application/json' });
        let options = new RequestOptions({ headers: headers });
        console.log(this.userUrl);
-       return this.http.post(this.userUrl, { user }, options)
+       return this.http.post(this.userUrl, user, options)
                     .map(res => res.json())
                     .catch(this.handleError);
   }

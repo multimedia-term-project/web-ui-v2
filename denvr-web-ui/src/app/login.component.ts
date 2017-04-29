@@ -20,7 +20,7 @@ export class loginComponent {
     constructor (private loginService: loginService) {}
     signIn(userName, password){
       var errorMessage;
-      var user = {userName, password};
+      var user = {'email':userName, 'password':password};
       this.loginService.getUser(user)
             .subscribe(
                 res => {var data = new serverResponse('',''),

@@ -31,7 +31,7 @@ export class registerComponent {
      var response;
      var data = new serverResponse('','');
      var success: string;
-     var user = {userName, password, email};
+     var user = {'name': userName, 'password': password, 'email':email};
     if (!user) { return; }
       this.registerService.create(user)
                        .subscribe(
@@ -43,5 +43,5 @@ export class registerComponent {
 
   }
 
-                         
+
 }
