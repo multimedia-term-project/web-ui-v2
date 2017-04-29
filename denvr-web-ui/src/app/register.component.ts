@@ -5,6 +5,7 @@ import {Http, Response, Headers, RequestOptions} from "@angular/http";
 import {Observable} from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
+import {register} from './register'
 //import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 
@@ -22,7 +23,7 @@ export class registerComponent {
  constructor (private registerService: registerService) {}
 
 
-  newUser(userName, password, email):Observable<user>{
+  newUser(userName, password, email):Observable<register>{
      var errorMessage: string;
      var response;
      var success: string;
@@ -30,9 +31,9 @@ export class registerComponent {
     if (!user) { return; }
       this.registerService.create(user)
                        .subscribe(
-                         response => user,
+                         response => register,
                          error =>  errorMessage = <any>error
                        );
-      console.dir(user);
+      console.dir(response);
     }
 }

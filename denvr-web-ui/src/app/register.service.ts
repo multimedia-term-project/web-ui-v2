@@ -5,6 +5,7 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 import { user } from './user';
 import { Headers, RequestOptions } from '@angular/http';
+import {register} from './register'
 
 
 
@@ -12,11 +13,11 @@ import { Headers, RequestOptions } from '@angular/http';
 @Injectable()
   export class registerService{
 
-     private userUrl = 'http://52.15.89.214:3000/user/signup';  // URL to web API
+     private userUrl = 'http://52.15.89.214:8001//user/signup';  // URL to web API
 
      constructor (private http: Http) {}
 
-     create(user): Observable<user> {
+     create(user): Observable<register> {
        let headers = new Headers({ 'Content-Type': 'application/json' });
        let options = new RequestOptions({ headers: headers });
        console.log(this.userUrl);
