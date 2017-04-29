@@ -13,7 +13,7 @@ import {register} from './register'
 @Injectable()
   export class registerService{
 
-     private userUrl = 'http://52.15.89.214:8001//user/signup';  // URL to web API
+     private userUrl = 'http://52.15.89.214:8001/user/signup';  // URL to web API
 
      constructor (private http: Http) {}
 
