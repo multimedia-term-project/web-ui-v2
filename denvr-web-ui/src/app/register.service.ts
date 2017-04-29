@@ -5,6 +5,7 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 import { user } from './user';
 import { Headers, RequestOptions } from '@angular/http';
+
 import {serverResponse} from './serverResponse';
 
 
@@ -19,6 +20,7 @@ import {serverResponse} from './serverResponse';
      constructor (private http: Http) {}
 
      create(user): Observable<serverResponse> {
+
        let headers = new Headers({ 'Content-Type': 'application/json' });
        let options = new RequestOptions({ headers: headers });
        console.log(this.userUrl);
