@@ -5,7 +5,6 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 import { user } from './user';
 import { Headers, RequestOptions } from '@angular/http';
-
 import {serverResponse} from './serverResponse';
 
 
@@ -13,18 +12,18 @@ import {serverResponse} from './serverResponse';
 
 
 @Injectable()
-  export class registerService{
+  export class loginService{
 
-     private userUrl = 'http://52.15.89.214:8002/user/signup';  // URL to web API
+     private userUrl = 'http://52.15.89.214:8002/user/signin';  // URL to web API
 
      constructor (private http: Http) {}
 
-     create(user): Observable<serverResponse> {
+     getUser(user): Observable<serverResponse> {
 
        let headers = new Headers({ 'Content-Type': 'application/json' });
        let options = new RequestOptions({ headers: headers });
        console.log(this.userUrl);
-    return this.http.post(this.userUrl, user, options)
+       return this.http.post(this.userUrl, user, options)
                     .map(res => res.json())
                     .catch(this.handleError);
   }
