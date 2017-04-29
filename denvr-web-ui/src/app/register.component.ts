@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {user} from './user';
+import {serverResponse} from './serverResponse'
 import {registerService} from './register.service';
 import {Http, Response, Headers, RequestOptions} from "@angular/http";
 import {Observable} from 'rxjs/Rx';
@@ -19,20 +20,26 @@ import 'rxjs/add/operator/catch';
 })
 export class registerComponent {
 
+
  constructor (private registerService: registerService) {}
 
 
-  newUser(userName, password, email):Observable<user>{
+
+
+  newUser(userName, password, email):Observable<serverResponse>{
      var errorMessage: string;
      var response;
+     var data = new serverResponse('','');
      var success: string;
      var user = {userName, password, email};
     if (!user) { return; }
       this.registerService.create(user)
                        .subscribe(
-                         response => user,
+                         res => {var data = new serverResponse('',''),
+                                data = res;
+                                console.log(data)},
                          error =>  errorMessage = <any>error
                        );
-      console.dir(user);
-    }
+  //console.log(data);
+  }
 }
