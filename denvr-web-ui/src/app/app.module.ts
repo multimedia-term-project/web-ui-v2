@@ -5,10 +5,12 @@ import { HttpModule, JsonpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import {registerComponent} from './register.component';
 import { RouterModule, Routes } from '@angular/router';
+import {loginComponent} from './login.component';
 
 
 const appRoutes: Routes = [
   { path: 'register', component: registerComponent },
+  {path: 'login', component: loginComponent}
 ];
 
 
@@ -17,7 +19,8 @@ const appRoutes: Routes = [
 
   declarations: [
     AppComponent,
-    registerComponent
+    registerComponent,
+    loginComponent
 
   ],
   imports: [
