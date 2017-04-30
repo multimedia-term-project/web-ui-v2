@@ -5,9 +5,9 @@ import { Component } from '@angular/core';
   templateUrl: 'home.html',
   styleUrls: [
     '../assets/css/gallery.css',
-    '../assets/css/nouislider.min.css',
     '../assets/css/test.css'
-  ]
+  ],
+
 })
 export class homeComponent{
   lat: number = 39.7739;
