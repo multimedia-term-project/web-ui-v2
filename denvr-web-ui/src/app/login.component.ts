@@ -8,19 +8,35 @@ import { user } from './user';
 import { Headers, RequestOptions } from '@angular/http';
 import {serverResponse} from './serverResponse';
 import {loginService} from './login.service'
-
+import {userService} from './user.service'
 
 @Component({
   selector: 'app-root',
-  templateUrl: 'login.html',
+  template: '\
+  <div>\
+    <div id="bg"></div>\
+    <h1>Please log in...</h1>\
+    <hr>\
+    <form id="login-form" method="POST" action="/login">\
+      <label>Denvr</label>\
+      <br>\
+      <input [(ngModel)]="name" type="text" name="userName" class="form-control" id="userName" placeholder="Enter username">\
+      <input [(ngModel)]="password" type="password" name="password" class="form-control" id="password" placeholder="Enter password">\
+      <button class="login" (click)="signIn(name, password);">Login</button>\
+      <a routerLink="/register" routerLinkActive="active"> Or Register</a>\
+    </form>\
+  </div>\
+',
   styleUrls: ['./app.component.css'],
   providers: [loginService],
 })
 export class loginComponent {
-    constructor (private loginService: loginService) {}
+    constructor (private loginService: loginService, private userService:userService) {}
     signIn(userName, password){
       var errorMessage;
       var user = {'email':userName, 'password':password};
+      var userId = this.userService.getUserId();
+      console.log("user id: " + userId);
       this.loginService.getUser(user)
             .subscribe(
                 res => {var data = new serverResponse('',''),

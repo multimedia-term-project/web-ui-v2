@@ -6,11 +6,16 @@ import { AppComponent } from './app.component';
 import {registerComponent} from './register.component';
 import { RouterModule, Routes } from '@angular/router';
 import {loginComponent} from './login.component';
+import {userService} from './user.service';
 
 
 const appRoutes: Routes = [
   { path: 'register', component: registerComponent },
-  {path: 'login', component: loginComponent}
+  { path: 'login', component: loginComponent},
+  { path: '',
+   redirectTo: '/register',
+   pathMatch: 'full'
+ }
 ];
 
 
@@ -30,8 +35,9 @@ const appRoutes: Routes = [
     JsonpModule,
     RouterModule.forRoot(appRoutes),
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [userService],
+  bootstrap: [AppComponent],
 })
 
-export class AppModule { }
+export class AppModule {
+}
