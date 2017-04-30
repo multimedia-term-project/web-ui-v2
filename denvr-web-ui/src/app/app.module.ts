@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import {registerComponent} from './register.component';
 import {loginComponent} from './login.component';
 import {homeComponent} from './home.component';
-
+import {Main} from './main.component'
 import {Faces} from './face.component'
 import {Slider} from './slider.component'
 
@@ -21,8 +21,7 @@ import { NavbarComponent } from './navbar.component';
 const appRoutes: Routes = [
   { path: 'register', component: registerComponent },
   { path: 'login', component: loginComponent },
-  { path: 'home', component: homeComponent },
-  { path: 'homeMap', component: homeMapComponent },
+  { path: 'home', component: homeComponent }
 ];
 
 
@@ -38,6 +37,7 @@ const appRoutes: Routes = [
     Faces,
     Slider,
     homeMapComponent,
+    Main
 
   ],
   imports: [
