@@ -10,6 +10,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AgmCoreModule } from 'angular2-google-maps/core';
 import { NouisliderModule } from 'ng2-nouislider';
+import { NavbarComponent } from './navbar.component';
 
 const appRoutes: Routes = [
   { path: 'register', component: registerComponent },
@@ -22,10 +23,11 @@ const appRoutes: Routes = [
 @NgModule({
 
   declarations: [
+    NavbarComponent,
     AppComponent,
     registerComponent,
     loginComponent,
-    homeComponent
+    homeComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,7 +37,7 @@ const appRoutes: Routes = [
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDOi2bgjXG7ydXj1xNAMpplBf5PB7y7j4Y'
     }),
-    NouisliderModule
+    NouisliderModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
