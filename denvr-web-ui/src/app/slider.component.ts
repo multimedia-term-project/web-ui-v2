@@ -8,7 +8,7 @@ import {Component} from '@angular/core';
         <div class="col-md-1"></div>
         <div class="col-md-10">
           <form action="#">
-            <pre><nouislider name="slider" [connect]="true" [min]="0" [max]="15" [(ngModel)]="someRange"></nouislider></pre>
+            <nouislider [connect]="true" [min]="0" [max]="10" [(ngModel)]="someRange" [tooltips]="[ true, true ]" style="margin-top: 4em;"></nouislider>
           </form>
         </div>
         <div class="col-md-1"></div>
