@@ -1,0 +1,56 @@
+<html>
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+</head>
+</html>
+<ct-navbar></ct-navbar>
+<div id="wrapper">
+  <!-- Page content -->
+  <div id="page-content-wrapper">
+    <div class="page-content">
+      <div class="row">
+        <div class="col-md-2" style="height:600px;">
+          <div class="panel panel-map" style="height:100%;">
+            <div id="mapPanel" class="panel-default" style="height:100%;">
+              <button onclick="window.location.href='home'">Map</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-8">
+          <div class="panel panel-default">
+            <div class="panel-body" style="overflow:scroll; height:75%;">
+              <sebm-google-map [latitude]="lat" [longitude]="lng">
+                <sebm-google-map-marker [latitude]="lat" [longitude]="lng"></sebm-google-map-marker>
+              </sebm-google-map>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="panel panel-default">
+            <div class="panel-body" style="overflow:scroll; height:600px;">
+              Faces<br>
+              <img src="http://kingofwallpapers.com/face/face-051.jpg"><br><br>
+              <img src="http://kingofwallpapers.com/face/face-051.jpg"><br><br>
+              <img src="http://kingofwallpapers.com/face/face-051.jpg"><br><br>
+              <img src="http://kingofwallpapers.com/face/face-051.jpg"><br><br>
+              <img src="http://kingofwallpapers.com/face/face-051.jpg"><br><br>
+              <img src="http://kingofwallpapers.com/face/face-051.jpg"><br><br>
+              <img src="http://kingofwallpapers.com/face/face-051.jpg"><br><br>
+              <img src="http://kingofwallpapers.com/face/face-051.jpg"><br>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+          <form action="#">
+            <pre><nouislider name="slider" [connect]="true" [min]="0" [max]="15" [(ngModel)]="someRange"></nouislider></pre>
+          </form>
+        </div>
+        <div class="col-md-1"></div>
+      </div>
+    </div>
+  </div>
+</div>
