@@ -3,14 +3,12 @@ import { Component, TemplateRef, ViewChild} from '@angular/core'
 @Component({
   selector: 'main',
   template: `
-    <div class="row">
-        <div class="col-md-2" style="height:600px;">
-          <div class="panel panel-map" style="height:100%;">
-            <div id="mapPanel" class="panel-default" style="height:100%;">
-              <button (click)="changeTemplate()">Map</button>
-            </div>
+    <div class="col-md-2" style="height:600px;">
+        <div class="panel panel-map" style="height:100%;">
+          <div id="mapPanel" class="panel-default" style="height:100%;">
+            <button (click)="changeTemplate()">Map</button>
           </div>
-      </div>
+        </div>
     </div>
     <template [ngTemplateOutlet]="getTemplate()"></template>
     <template #images>
