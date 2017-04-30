@@ -12,21 +12,21 @@ import {userService} from './user.service'
 
 @Component({
   selector: 'app-root',
-  template: '\
-  <div>\
-    <div id="bg"></div>\
-    <h1>Please log in...</h1>\
-    <hr>\
-    <form id="login-form" method="POST" action="/login">\
-      <label>Denvr</label>\
-      <br>\
-      <input [(ngModel)]="name" type="text" name="userName" class="form-control" id="userName" placeholder="Enter username">\
-      <input [(ngModel)]="password" type="password" name="password" class="form-control" id="password" placeholder="Enter password">\
-      <button class="login" (click)="signIn(name, password);">Login</button>\
-      <a routerLink="/register" routerLinkActive="active"> Or Register</a>\
-    </form>\
-  </div>\
-',
+  template: `
+  <div>
+    <div id="bg"></div>
+    <h1>Please log in...</h1>
+    <hr>
+    <form id="login-form" method="POST" action="/login">
+      <label>Denvr</label>
+      <br>
+      <input [(ngModel)]="name" type="text" name="userName" class="form-control" id="userName" placeholder="Enter username">
+      <input [(ngModel)]="password" type="password" name="password" class="form-control" id="password" placeholder="Enter password">
+      <button class="login" (click)="signIn(name, password);">Login</button>
+      <a routerLink="/register" routerLinkActive="active"> Or Register</a>
+    </form>
+  </div>
+`,
   styleUrls: ['./app.component.css'],
   providers: [loginService],
 })
