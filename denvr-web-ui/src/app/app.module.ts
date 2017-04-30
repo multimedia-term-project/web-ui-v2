@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import {registerComponent} from './register.component';
 import {loginComponent} from './login.component';
 import {homeComponent} from './home.component';
+import {Faces} from './face.component'
+import {Slider} from './slider.component'
 import { RouterModule, Routes } from '@angular/router';
 
 import { AgmCoreModule } from 'angular2-google-maps/core';
@@ -28,6 +30,8 @@ const appRoutes: Routes = [
     registerComponent,
     loginComponent,
     homeComponent,
+    Faces,
+    Slider
   ],
   imports: [
     BrowserModule,

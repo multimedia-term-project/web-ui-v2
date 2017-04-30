@@ -12,7 +12,6 @@ import { Component } from '@angular/core';
 export class homeComponent{
   lat: number = 39.7739;
   lng: number = -86.1763;
-  someRange = [ 1, 100 ];
 
   toggleMap() {
 
