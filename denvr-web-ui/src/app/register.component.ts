@@ -19,23 +19,23 @@ import {AppModule} from './app.module';
 
 @Component({
   selector: 'app-root',
-  template: '\
-  <div>\
-    <div id="bg"></div>\
-    <h1>Enter information below!</h1>\
-    <hr>\
-    <form id="register-form" method="POST" action="/register">\
-      <label>Denvr</label>\
-      <br>\
-      <input [(ngModel)]="name" type="text" name="userName" class="form-control" id="userName" placeholder="Enter username">\
-      <input [(ngModel)]="password" type="password" name="password" class="form-control" id="password" placeholder="Enter password">\
-      <input [(ngModel)]="email" type="email" name="email" class="form-control" id="email" placeholder="Enter email">\
-      <input [(ngModel)]="confirmEmail" type="email" name="confirmEmail" class="form-control" id="confirmEmail" placeholder="Confirm email">\
-      <button class="login" (click)="newUser(name, password, email);">Register</button>\
-      <a routerLink="/login" routerLinkActive="active">login</a>\
-    </form>\
-  </div>\
-/',
+  template: `
+  <div>
+    <div id="bg"></div>
+    <h1>Enter information below!</h1>
+    <hr>
+    <form id="register-form" method="POST" action="/register">
+      <label>Denvr</label>
+      <br>
+      <input [(ngModel)]="name" type="text" name="userName" class="form-control" id="userName" placeholder="Enter username">
+      <input [(ngModel)]="password" type="password" name="password" class="form-control" id="password" placeholder="Enter password">
+      <input [(ngModel)]="email" type="email" name="email" class="form-control" id="email" placeholder="Enter email">
+      <input [(ngModel)]="confirmEmail" type="email" name="confirmEmail" class="form-control" id="confirmEmail" placeholder="Confirm email">
+      <button class="login" (click)="newUser(name, password, email);">Register</button>
+      <a routerLink="/login" routerLinkActive="active">login</a>
+    </form>
+  </div>
+`,
   styleUrls: ['./app.component.css'],
   providers: [registerService],
 })
