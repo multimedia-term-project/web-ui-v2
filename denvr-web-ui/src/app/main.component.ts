@@ -16,69 +16,40 @@ import { Component, TemplateRef, ViewChild} from '@angular/core'
           <div class="panel panel-default">
             <div class="panel-body" style="overflow:scroll; height:75%;">
               <div class="gallery">
-                <a target="_blank" href="img_fjords.jpg">
-                  <img src="http://kingofwallpapers.com/face/face-051.jpg" alt="Trolltunga Norway" width="10%">
-                </a>
+                <img src="http://kingofwallpapers.com/face/face-051.jpg" alt="Trolltunga Norway" width="10%">
               </div>
-
               <div class="gallery">
-                <a target="_blank" href="img_forest.jpg">
-                  <img src="http://kingofwallpapers.com/face/face-051.jpg" alt="Forest" width="600" height="400">
-                </a>
+                <img src="http://kingofwallpapers.com/face/face-051.jpg" alt="Trolltunga Norway" width="10%">
               </div>
-
               <div class="gallery">
-                <a target="_blank" href="img_lights.jpg">
-                  <img src="http://kingofwallpapers.com/face/face-051.jpg" alt="Northern Lights" width="600" height="400">
-                </a>
+                <img src="http://kingofwallpapers.com/face/face-051.jpg" alt="Trolltunga Norway" width="10%">
               </div>
-
               <div class="gallery">
-                <a target="_blank" href="img_mountains.jpg">
-                  <img src="http://kingofwallpapers.com/face/face-051.jpg" alt="Mountains" width="600" height="400">
-                </a>
+                <img src="http://kingofwallpapers.com/face/face-051.jpg" alt="Trolltunga Norway" width="10%">
               </div>
-
               <div class="gallery">
-                <a target="_blank" href="img_mountains.jpg">
-                  <img src="http://kingofwallpapers.com/face/face-051.jpg" alt="Mountains" width="600" height="400">
-                </a>
+                <img src="http://kingofwallpapers.com/face/face-051.jpg" alt="Trolltunga Norway" width="10%">
               </div>
-
               <div class="gallery">
-                <a target="_blank" href="img_mountains.jpg">
-                  <img src="http://kingofwallpapers.com/face/face-051.jpg" alt="Mountains" width="600" height="400">
-                </a>
+                <img src="http://kingofwallpapers.com/face/face-051.jpg" alt="Trolltunga Norway" width="10%">
               </div>
-
               <div class="gallery">
-                <a target="_blank" href="img_mountains.jpg">
-                  <img src="http://kingofwallpapers.com/face/face-051.jpg" alt="Mountains" width="600" height="400">
-                </a>
+                <img src="http://kingofwallpapers.com/face/face-051.jpg" alt="Trolltunga Norway" width="10%">
               </div>
-
               <div class="gallery">
-                <a target="_blank" href="img_mountains.jpg">
-                  <img src="http://kingofwallpapers.com/face/face-051.jpg" alt="Mountains" width="600" height="400">
-                </a>
+                <img src="http://kingofwallpapers.com/face/face-051.jpg" alt="Trolltunga Norway" width="10%">
               </div>
-
               <div class="gallery">
-                <a target="_blank" href="img_mountains.jpg">
-                  <img src="http://kingofwallpapers.com/face/face-051.jpg" alt="Mountains" width="600" height="400">
-                </a>
+                <img src="http://kingofwallpapers.com/face/face-051.jpg" alt="Trolltunga Norway" width="10%">
               </div>
-
               <div class="gallery">
-                <a target="_blank" href="img_mountains.jpg">
-                  <img src="http://kingofwallpapers.com/face/face-051.jpg" alt="Mountains" width="600" height="400">
-                </a>
+                <img src="http://kingofwallpapers.com/face/face-051.jpg" alt="Trolltunga Norway" width="10%">
               </div>
-
               <div class="gallery">
-                <a target="_blank" href="img_mountains.jpg">
-                  <img src="http://kingofwallpapers.com/face/face-051.jpg" alt="Mountains" width="600" height="400">
-                </a>
+                <img src="http://kingofwallpapers.com/face/face-051.jpg" alt="Trolltunga Norway" width="10%">
+              </div>
+              <div class="gallery">
+                <img src="http://kingofwallpapers.com/face/face-051.jpg" alt="Trolltunga Norway" width="10%">
               </div>
             </div>
           </div>

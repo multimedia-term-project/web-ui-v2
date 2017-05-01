@@ -42,8 +42,6 @@ const appRoutes: Routes = [
     Faces,
     Slider,
     Main
-
-
   ],
   imports: [
     BrowserModule,
