@@ -20,28 +20,16 @@ import { FileUploader } from 'ng2-file-upload';
       <div class="col-md-8">
           <div class="panel panel-default">
             <div class="panel-body" style="overflow:scroll; height:75%;">
-           
-            <div *ngFor="let picture of pictures">
-                <div class ="gallery">
-                <a target = {{picture.url}} href = {{picture.url}}>
-                  <img src = {{picture.url}} width = "10%">
-                </a>
-                </div>
-            </div>
-
-
-
-
-
-              <div class="gallery">
-                <a target="_blank" href="img_fjords.jpg">
-                  <img src="http://kingofwallpapers.com/face/face-051.jpg" alt="Trolltunga Norway" width="10%">
-                </a>
-              </div>
-
-
-
-
+                             <div *ngFor="let picture of pictures">
+                  <img src =   {{picture.url}}><br>
+                 </div>
+            <!--<div *ngFor="let picture of pictures">-->
+                <!--<div class ="gallery">-->
+                <!--<a target = {{picture.url}} href = {{picture.url}}>-->
+                  <!--<img src = {{picture.url}} width = "10%">-->
+                <!--</a>-->
+                <!--</div>-->
+            <!--</div>-->
             </div>
           </div>
       </div>
@@ -130,7 +118,4 @@ export class Main{
         error =>  this.errorMessage = <any>error
       )
   }
-
-
-
 }

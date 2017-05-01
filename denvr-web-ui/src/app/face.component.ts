@@ -10,10 +10,6 @@ import {picture} from './picture';
           <div class="panel panel-default">
             <div class="panel-body" style="overflow:scroll; height:600px;">
             <p>Faces</p>
-              <!-- <img src="http://kingofwallpapers.com/face/face-051.jpg"><br><br>
-                 <img src="http://kingofwallpapers.com/face/face-051.jpg"><br><br>
-                 <img src="http://kingofwallpapers.com/face/face-051.jpg"><br><br>
-                 <img src="http://kingofwallpapers.com/face/face-051.jpg"><br> -->
 
                  <div *ngFor="let picture of pictures">
                   <img src =   {{picture.url}}><br>
@@ -49,13 +45,5 @@ export class Faces{
                               },
                      error =>  this.errorMessage = <any>error
           );
-
-
-
-
-          //console.log(this.pictures);
-
-
     }
-
 }

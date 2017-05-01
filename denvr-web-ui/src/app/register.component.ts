@@ -18,7 +18,7 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 
 
 @Component({
-  selector: 'app-root',
+  selector: 'register',
   template: `
   <div>
     <div id="bg"></div>

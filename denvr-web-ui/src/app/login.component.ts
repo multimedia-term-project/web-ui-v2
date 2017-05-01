@@ -12,7 +12,7 @@ import {userService} from './user.service';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
 @Component({
-  selector: 'app-root',
+  selector: 'login',
   template: `
   <div>
     <div id="bg"></div>
@@ -40,20 +40,17 @@ export class loginComponent {
             .subscribe(
                 res => {var data = new serverResponse('',''),
                         data = res;
-                        this.loggedIn(data);
+                        console.log(res);
+                        this.loggedIn(res);
                       },
                 error =>  errorMessage = <any>error
       );
-
-
-
-
   }
   loggedIn(data){
-    this.userService.setUserId(data.userId);
+    this.userService.setUserId(data._id);
     //console.log('set');
     var user = this.userService.getUserId();
-    //console.log(user);
     this.router.navigate(['/home', user]);
+
   }
 }

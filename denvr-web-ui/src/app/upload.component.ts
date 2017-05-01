@@ -1,17 +1,17 @@
 import { Component } from '@angular/core';
-import { FileUploader } from 'ng2-file-upload';
 import {Observable} from "rxjs/Observable";
 import {RequestOptions, Http, Response} from "@angular/http";
+import {userService} from './user.service'
 
 // const URL = '/api/';
-const URL = 'http://localhost:3000/image/test';
+const URL = 'http://52.15.89.214:8002/image/';
 
 @Component({
   selector: 'uploader',
   template: `<input type="file" (change)="fileChange($event)" placeholder="Upload file" accept="*">`
 })
 export class Uploader {
-  constructor (private http: Http) {}
+  constructor (private http: Http, private userService : userService) {}
   fileChange(event) {
     let fileList: FileList = event.target.files;
     if(fileList.length > 0) {
@@ -19,7 +19,7 @@ export class Uploader {
         let formData:FormData = new FormData();
         formData.append('uploadFile', file, file.name);
         let options = new RequestOptions();
-        this.http.post(URL, formData, options)
+        this.http.post(URL + this.userService.getUserId(), formData, options)
             .map(res => res.json())
             .catch(error => Observable.throw(error))
             .subscribe(
