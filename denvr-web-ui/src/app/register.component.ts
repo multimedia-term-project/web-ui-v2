@@ -9,9 +9,9 @@ import 'rxjs/add/operator/catch';
 import {register} from './register';
 import {userService} from './user.service';
 import {AppModule} from './app.module';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 
-//bootstrap('AppComponent',[userService])
-//import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+
 
 
 
@@ -42,7 +42,7 @@ import {AppModule} from './app.module';
 export class registerComponent {
 
 
- constructor (private registerService: registerService, private userService: userService) {}
+ constructor (private registerService: registerService, private userService: userService, private router:Router) {}
 // constructor(private userservice:userService){}
 
 //constructor (private userService: userService)
@@ -72,9 +72,10 @@ export class registerComponent {
 
   loggedIn(data){
     this.userService.setUserId(data.userId);
-    console.log('set');
+    //console.log('set');
     var user = this.userService.getUserId();
-    console.log(user);
+    //console.log(user);
+    this.router.navigate(['/home', user]);
 
   }
 

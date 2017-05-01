@@ -18,13 +18,13 @@ import { NavbarComponent } from './navbar.component';
 const appRoutes: Routes = [
   { path: 'register', component: registerComponent },
 
-  { path: 'home', component: homeComponent },
+  { path: 'home/:id', component: homeComponent },
 
   { path: 'login', component: loginComponent},
   { path: '',
    redirectTo: '/register',
    pathMatch: 'full'
- }
+ },
 
 ];
 
