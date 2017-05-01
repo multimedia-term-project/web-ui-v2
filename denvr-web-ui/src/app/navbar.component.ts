@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,  TemplateRef, ViewChild } from '@angular/core';
 @Component({
   selector: 'ct-navbar',
   template: `
@@ -21,18 +21,45 @@ import { Component } from '@angular/core';
   
           <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="/home" class="fa fa-plus"> Add Image</a></li>
+              <li><a (click)="askForImage()" class="fa fa-plus"> Add Image</a></li>
             </ul>
           </div>
         </div>
       </nav>
     </ng-sidebar-container>
+    <div class="row">
+     <div class="col-md-2"></div>
+    <div class="col-md-8">
+    <ng-template [ngTemplateOutlet]="getTemplate()" ></ng-template>
+    <ng-template #default></ng-template>
+    <ng-template #upload>
+      <br><br><br><br><br><br>
+      <uploader></uploader>
+      <button (click)="uploadbtn()">Upload</button>
+    </ng-template>
+    </div>
+    <div class="col-md-2"></div>
+      </div>
   `,
 })
 export class NavbarComponent {
   private _opened: boolean = false;
-
+  @ViewChild('default') default : TemplateRef<any>;
+  @ViewChild('upload') uploadTemplate: TemplateRef<any>;
+  private templateToShow : TemplateRef<any> = this.default;
   _toggleSidebar() {
     this._opened = !this._opened;
+  }
+
+  askForImage() {
+    console.log("Ask For Image");
+    this.templateToShow = this.uploadTemplate
+  }
+  uploadbtn(){
+    console.log("upload")
+    this.templateToShow = this.default;
+  }
+  getTemplate(){
+    return this.templateToShow;
   }
 }

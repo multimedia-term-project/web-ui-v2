@@ -20,7 +20,7 @@ import { FileUploader } from 'ng2-file-upload';
       <div class="col-md-8">
           <div class="panel panel-default">
             <div class="panel-body" style="overflow:scroll; height:75%;">
-            <!--
+           
             <div *ngFor="let picture of pictures">
                 <div class ="gallery">
                 <a target = {{picture.url}} href = {{picture.url}}>
@@ -29,31 +29,18 @@ import { FileUploader } from 'ng2-file-upload';
                 </div>
             </div>
 
-            -->
-            <!--<form id="login-form" method="POST" action="/login">-->
-              <!--<label>Denvr</label>-->
-              <!--<br>-->
-              <!--Send File:<br>-->
-              <!--<input type="file" ng2FileSelect [uploader]="uploader" />-->
-              <!--<button class="login" (click)="sendPicture(uploader);">send</button>-->
-
-            <!--</form>-->
-              <uploader></uploader>
 
 
-            <!--
+
+
               <div class="gallery">
                 <a target="_blank" href="img_fjords.jpg">
                   <img src="http://kingofwallpapers.com/face/face-051.jpg" alt="Trolltunga Norway" width="10%">
                 </a>
               </div>
-              <div class="gallery">
-                <a target="_blank" href="img_forest.jpg">
-                  <img src="http://kingofwallpapers.com/face/face-051.jpg" alt="Forest" width="600" height="400">
-                </a>
-              </div>
 
-                -->
+
+
 
             </div>
           </div>
