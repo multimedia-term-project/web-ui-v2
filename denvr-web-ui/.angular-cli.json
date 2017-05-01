@@ -54,7 +54,7 @@
     "styleExt": "css",
     "serve": {
      "port": 4200,
-     "host": "web-ui-v2"
+     "host": "107.170.29.196"
     }
     "component": {}
   }
