@@ -84,6 +84,7 @@ export class Main{
   //public uploader:FileUploader = new FileUploader({url: URL});
   pictures: picture[];
   errorMessage: string;
+  counter:number;
   @ViewChild('images') images : TemplateRef<any>;
   @ViewChild('map') map: TemplateRef<any>;
   private templateToShow : string = "images"
@@ -94,6 +95,7 @@ export class Main{
 
 
   constructor(private userService: userService, private mainService:mainService){
+    this.counter = -1;
 
   }
 
@@ -128,11 +130,17 @@ export class Main{
   }
 
   sendPicture(image){
+    this.counter++;
     //var image = image;
     var userId = this.userService.getUserId();
     //console.log(userId);
-    console.log(this.uploader.queue[0].file);
-    this.mainService.postPicture(this.uploader.queue[0].file,userId);
+    console.log(this.uploader.queue[this.counter].file);
+    this.mainService.postPicture(this.uploader.queue[0].file)
+      .subscribe(
+        pictures => {console.log('hey');
+                 },
+        error =>  this.errorMessage = <any>error
+      )
   }
 
 
