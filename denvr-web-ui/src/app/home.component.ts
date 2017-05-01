@@ -13,7 +13,9 @@ export class homeComponent{
   lat: number = 39.7739;
   lng: number = -86.1763;
 
-  toggleMap() {
-    
+  private _opened: boolean = false;
+
+  private _toggleSidebar() {
+    this._opened = !this._opened;
   }
 }

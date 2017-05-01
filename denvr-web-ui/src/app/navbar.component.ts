@@ -4,9 +4,9 @@ import { Component } from '@angular/core';
   templateUrl: 'navbar.component.html'
 })
 export class NavbarComponent {
-  isIn = false;   // store state
-  toggleState() { // click handler
-    let bool = this.isIn;
-    this.isIn = bool === false ? true : false;
+  private _opened: boolean = false;
+
+  _toggleSidebar() {
+    this._opened = !this._opened;
   }
 }

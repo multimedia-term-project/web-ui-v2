@@ -17,7 +17,6 @@ import {userService} from './user.service'
     <div id="bg"></div>
     <h1>Please log in...</h1>
     <hr>
-    <nouislider [min]="0" [max]="15" [(ngModel)]="someRange"></nouislider>
     <form id="login-form" method="POST" action="/login">
       <label>Denvr</label>
       <br>
