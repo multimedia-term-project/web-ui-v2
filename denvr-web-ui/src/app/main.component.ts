@@ -20,16 +20,13 @@ import {picture} from './picture';
       <div class="col-md-8">
           <div class="panel panel-default">
             <div class="panel-body" style="overflow:scroll; height:75%;">
-                             <div *ngFor="let picture of pictures">
-                  <img src =   {{picture.url}}><br>
-                 </div>
-            <!--<div *ngFor="let picture of pictures">-->
-                <!--<div class ="gallery">-->
-                <!--<a target = {{picture.url}} href = {{picture.url}}>-->
-                  <!--<img src = {{picture.url}} width = "10%">-->
-                <!--</a>-->
-                <!--</div>-->
-            <!--</div>-->
+            <div *ngFor="let picture of pictures">
+                <div class ="gallery">
+                <a target = {{picture.url}} href = {{picture.url}}>
+                  <img src = {{picture.url}} width = "10%">
+                </a>
+                </div>
+            </div>
             </div>
           </div>
       </div>
