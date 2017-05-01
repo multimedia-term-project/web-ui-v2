@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, Response }          from '@angular/http';
+import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
@@ -28,6 +28,19 @@ import {picture} from './picture';
                     .map(res=>res.json())
                     .catch(this.handleError);
   }
+
+  postPicture(pictureFile): Observable<picture>{
+    console.log("hey");
+    console.dir(pictureFile);
+    var userUrl = 'http://localhost:3000/image/H1KTpBEk-';
+    let headers = new Headers({ 'Content-Type': undefined });
+    let options = new RequestOptions({ headers: headers });
+    console.log(userUrl);
+    return this.http.post(userUrl, pictureFile, options)
+                 .map(res => res.json())
+                 .catch(this.handleError);
+}
+
 
   private extractData(res: Response) {
 

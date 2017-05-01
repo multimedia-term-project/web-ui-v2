@@ -15,6 +15,10 @@ import { AgmCoreModule } from 'angular2-google-maps/core';
 import { NouisliderModule } from 'ng2-nouislider';
 import { NavbarComponent } from './navbar.component';
 import { SidebarModule } from 'ng-sidebar';
+import { FileDropDirective, FileSelectDirective } from 'ng2-file-upload';
+import { Uploader } from './upload.component'
+
+//import {angularFileUpload} from 'angularFileUpload';
 
 const appRoutes: Routes = [
   { path: 'register', component: registerComponent },
@@ -39,7 +43,10 @@ const appRoutes: Routes = [
     homeComponent,
     Faces,
     Slider,
-    Main
+    Main,
+    FileDropDirective,
+    FileSelectDirective,
+    Uploader
   ],
   imports: [
     BrowserModule,
@@ -54,6 +61,7 @@ const appRoutes: Routes = [
     SidebarModule.forRoot()
   ],
   providers: [userService],
+
   bootstrap: [AppComponent],
 })
 
