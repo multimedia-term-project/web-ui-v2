@@ -15,7 +15,7 @@ import {serverResponse} from './serverResponse';
 @Injectable()
   export class registerService{
 
-     private userUrl = 'http://107.170.29.196:8002/user/signup';  // URL to web API
+     private userUrl = 'http://image-server-api:3000/user/signup';  // URL to web API
 
      constructor (private http: Http) {}
 

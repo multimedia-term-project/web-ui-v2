@@ -20,7 +20,7 @@ import {picture} from './picture';
      constructor (private http: Http) {}
 
      getPicture(user): Observable<picture[]> {
-       var userUrl = 'http://107.170.29.196:8002/image/'+user;
+       var userUrl = 'http://image-server-api:3000/image/'+user;
        //let headers = new Headers({ 'Content-Type': 'application/json' });
        //let options = new RequestOptions({ headers: headers });
        console.log(userUrl);

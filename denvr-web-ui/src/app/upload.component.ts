@@ -4,7 +4,7 @@ import {RequestOptions, Http, Response} from "@angular/http";
 import {userService} from './user.service'
 
 // const URL = '/api/';
-const URL = 'http://107.170.29.196:8002/image/';
+const URL = 'http://image-server-api:3000/image/';
 
 @Component({
   selector: 'uploader',

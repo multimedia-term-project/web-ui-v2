@@ -20,7 +20,7 @@ import {picture} from './picture';
      constructor (private http: Http) {}
 
      getPicture(user): Observable<string> {
-       var userUrl = 'http://107.170.29.196:8003/face/user/'+user;
+       var userUrl = 'http://face-api:5000/face/user/'+user;
        //let headers = new Headers({ 'Content-Type': 'application/json' });
        //let options = new RequestOptions({ headers: headers });
        //console.log(this.userUrl);
