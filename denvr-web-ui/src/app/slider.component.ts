@@ -50,5 +50,5 @@ export class Slider{
     }
   };
 
-  public someRange : number[] = [ new Date().getTime(), new Date().getTime()+2592000000];
+  public someRange : number[] = [ new Date().getTime(), new Date().getTime()+2692000000];
 }
