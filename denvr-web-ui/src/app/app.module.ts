@@ -14,6 +14,7 @@ import {userService} from './user.service';
 import { AgmCoreModule } from 'angular2-google-maps/core';
 import { NouisliderModule } from 'ng2-nouislider';
 import { NavbarComponent } from './navbar.component';
+import { SidebarModule } from 'ng-sidebar';
 
 const appRoutes: Routes = [
   { path: 'register', component: registerComponent },
@@ -22,13 +23,11 @@ const appRoutes: Routes = [
 
   { path: 'login', component: loginComponent},
   { path: '',
-   redirectTo: '/register',
+   redirectTo: '/login',
    pathMatch: 'full'
  },
 
 ];
-
-
 
 @NgModule({
 
@@ -41,8 +40,6 @@ const appRoutes: Routes = [
     Faces,
     Slider,
     Main
-
-
   ],
   imports: [
     BrowserModule,
@@ -54,6 +51,7 @@ const appRoutes: Routes = [
       apiKey: 'AIzaSyDOi2bgjXG7ydXj1xNAMpplBf5PB7y7j4Y'
     }),
     NouisliderModule,
+    SidebarModule.forRoot()
   ],
   providers: [userService],
   bootstrap: [AppComponent],

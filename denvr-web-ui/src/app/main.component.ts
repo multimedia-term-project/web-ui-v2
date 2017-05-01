@@ -39,51 +39,6 @@ import {picture} from './picture';
                   <img src="http://kingofwallpapers.com/face/face-051.jpg" alt="Forest" width="600" height="400">
                 </a>
               </div>
-              <div class="gallery">
-                <a target="_blank" href="img_lights.jpg">
-                  <img src="http://kingofwallpapers.com/face/face-051.jpg" alt="Northern Lights" width="600" height="400">
-                </a>
-              </div>
-              <div class="gallery">
-                <a target="_blank" href="img_mountains.jpg">
-                  <img src="http://kingofwallpapers.com/face/face-051.jpg" alt="Mountains" width="600" height="400">
-                </a>
-              </div>
-              <div class="gallery">
-                <a target="_blank" href="img_mountains.jpg">
-                  <img src="http://kingofwallpapers.com/face/face-051.jpg" alt="Mountains" width="600" height="400">
-                </a>
-              </div>
-              <div class="gallery">
-                <a target="_blank" href="img_mountains.jpg">
-                  <img src="http://kingofwallpapers.com/face/face-051.jpg" alt="Mountains" width="600" height="400">
-                </a>
-              </div>
-              <div class="gallery">
-                <a target="_blank" href="img_mountains.jpg">
-                  <img src="http://kingofwallpapers.com/face/face-051.jpg" alt="Mountains" width="600" height="400">
-                </a>
-              </div>
-              <div class="gallery">
-                <a target="_blank" href="img_mountains.jpg">
-                  <img src="http://kingofwallpapers.com/face/face-051.jpg" alt="Mountains" width="600" height="400">
-                </a>
-              </div>
-              <div class="gallery">
-                <a target="_blank" href="img_mountains.jpg">
-                  <img src="http://kingofwallpapers.com/face/face-051.jpg" alt="Mountains" width="600" height="400">
-                </a>
-              </div>
-              <div class="gallery">
-                <a target="_blank" href="img_mountains.jpg">
-                  <img src="http://kingofwallpapers.com/face/face-051.jpg" alt="Mountains" width="600" height="400">
-                </a>
-              </div>
-              <div class="gallery">
-                <a target="_blank" href="img_mountains.jpg">
-                  <img src="http://kingofwallpapers.com/face/face-051.jpg" alt="Mountains" width="600" height="400">
-                </a>
-              </div>
                 -->
 
 
