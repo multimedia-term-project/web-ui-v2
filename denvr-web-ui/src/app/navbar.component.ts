@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+
 @Component({
   selector: 'ct-navbar',
   template: `
@@ -27,6 +28,8 @@ import { Component } from '@angular/core';
         </div>
       </nav>
     </ng-sidebar-container>
+    
+    
   `,
 })
 export class NavbarComponent {
