@@ -19,15 +19,15 @@ import {picture} from './picture';
 
      constructor (private http: Http) {}
 
-     getPicture(user): Observable<picture[]> {
-       var userUrl = 'http://52.15.89.214:8002/image/:'+user;
+     getPicture(user): Observable<string> {
+       var userUrl = 'http://107.170.29.196:8003/face/user/'+user;
        //let headers = new Headers({ 'Content-Type': 'application/json' });
        //let options = new RequestOptions({ headers: headers });
        //console.log(this.userUrl);
        return this.http.get(userUrl)
-                    .map(res=>res.json())
+                    .map(res=>res["_body"])
                     .catch(this.handleError);
-  }
+    }
 
   private extractData(res: Response) {
 

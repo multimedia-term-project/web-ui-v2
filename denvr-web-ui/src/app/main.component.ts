@@ -2,6 +2,7 @@ import { Component, TemplateRef, ViewChild} from '@angular/core'
 import {userService} from './user.service';
 import {mainService} from './main.service';
 import {picture} from './picture';
+import {Slider} from "./slider.component";
 //import { FileUploader } from 'ng2-file-upload';
 
 
@@ -20,8 +21,8 @@ import {picture} from './picture';
       <div class="col-md-8">
           <div class="panel panel-default">
             <div class="panel-body" style="overflow:scroll; height:75%;">
-            <div *ngFor="let picture of pictures">
-                <div class ="gallery">
+            <div *ngFor="let picture of pictures" >
+                <div class ="gallery" *ngIf="inRange(picture)">
                 <a target = {{picture.url}} href = {{picture.url}}>
                   <img src = {{picture.url}} width = "10%">
                 </a>
@@ -66,7 +67,7 @@ export class Main {
 
   constructor(private userService: userService, private mainService: mainService) {
     this.counter = -1;
-
+    console.log(userService.getRange());
   }
 
   ngOnInit() {
@@ -82,7 +83,7 @@ export class Main {
       .subscribe(
         pictures => {
           this.pictures = pictures;
-          console.log(this.pictures[1].url);
+          console.log(pictures);
         },
         error => this.errorMessage = <any>error
       );
@@ -98,5 +99,12 @@ export class Main {
       "images": this.images,
       "map": this.map
     }[this.templateToShow];
+  }
+
+  inRange(image){
+    if (image.created) {
+      return new Date(image.created).getTime() > new Date(this.userService.getRange()[0]).getTime() && new Date(image.created).getTime() < new Date(this.userService.getRange()[1]).getTime()
+    }
+    return true;
   }
 }
