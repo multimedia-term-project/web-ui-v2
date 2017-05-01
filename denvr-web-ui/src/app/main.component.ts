@@ -10,8 +10,8 @@ import { Component, TemplateRef, ViewChild} from '@angular/core'
           </div>
         </div>
     </div>
-    <template [ngTemplateOutlet]="getTemplate()"></template>
-    <template #images>
+    <ng-template [ngTemplateOutlet]="getTemplate()"></ng-template>
+    <ng-template #images>
       <div class="col-md-8">
           <div class="panel panel-default">
             <div class="panel-body" style="overflow:scroll; height:75%;">
@@ -83,9 +83,9 @@ import { Component, TemplateRef, ViewChild} from '@angular/core'
             </div>
           </div>
       </div>
-    </template>
+    </ng-template>
     
-    <template #map>
+    <ng-template #map>
       <div class="col-md-8">
           <div class="panel panel-default">
             <div class="panel-body" style="overflow:scroll; height:75%;">
@@ -95,7 +95,7 @@ import { Component, TemplateRef, ViewChild} from '@angular/core'
             </div>
           </div>
         </div>
-    </template>
+    </ng-template>
   `,
   styleUrls: [
     '../assets/css/gallery.css',
