@@ -16,10 +16,12 @@ import {serverResponse} from './serverResponse';
   export class userService{
     userName: string;
     id: string;
+    private _range: number[];
 
      constructor () {
        this.userName = '';
        this.id = '';
+       this._range = [0, 100];
      }
 
      setUserName(userName){
@@ -41,6 +43,11 @@ import {serverResponse} from './serverResponse';
      }
 
 
+    getRange(): number[] {
+      return this._range;
+    }
 
-
-  }
+    setRange(value: number[]) {
+      this._range = value;
+    }
+}

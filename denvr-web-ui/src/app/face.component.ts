@@ -10,9 +10,10 @@ import {picture} from './picture';
           <div class="panel panel-default">
             <div class="panel-body" style="overflow:scroll; height:600px;">
             <p>Faces</p>
-
+                
                  <div *ngFor="let picture of pictures">
-                  <img src =   {{picture.url}}><br>
+                  <img src =   {{picture}}>
+                   <br/>
                  </div>
           </div>
         </div>
@@ -24,7 +25,7 @@ import {picture} from './picture';
   providers: [faceService]
 })
 export class Faces{
-  pictures: picture[];
+  pictures: string[];
   errorMessage: string;
   mode = 'observable';
 
@@ -40,9 +41,18 @@ export class Faces{
            //console.log(userId);
            this.faceService.getPicture(userId)
                  .subscribe(
-                     pictures => {this.pictures = pictures;
-                                  //console.log(this.pictures[1].url);
-                              },
+                     pictures => {
+                        pictures = pictures.replace(/'/g, '"')
+                        let pictureArray = JSON.parse(pictures)
+                       let pictureUrls = []
+                       let i = ""
+                       for(i in pictureArray) {
+                          pictureUrls.push("https://s3.us-east-2.amazonaws.com/multimedia-term-project/" + pictureArray[i])
+                       }
+                       console.log(pictureUrls)
+
+                       this.pictures = pictureUrls
+                       },
                      error =>  this.errorMessage = <any>error
           );
     }
