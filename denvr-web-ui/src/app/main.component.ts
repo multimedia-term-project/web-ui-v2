@@ -52,9 +52,7 @@ import {picture} from './picture';
 })
 
 export class Main {
-  //URL: "http://localhost:4200/home/";
-  //public uploader:FileUploader = new FileUploader({url: "http://localhost:4200/home/"});
-  //public uploader:FileUploader = new FileUploader({url: URL});
+
   pictures: picture[];
   errorMessage: string;
   counter: number;
@@ -64,7 +62,6 @@ export class Main {
 
   public lat: number = 39.7739;
   public lng: number = -86.1763;
-  //public uploader:FileUploader = new FileUploader({url: "http://localhost:4200/home/"})
 
 
   constructor(private userService: userService, private mainService: mainService) {
@@ -74,7 +71,7 @@ export class Main {
 
   ngOnInit() {
     this.getPictures();
-    //public uploader:FileUploader = new FileUploader({url: "http://localhost:4200/home/"})
+
   }
 
   getPictures() {
@@ -103,17 +100,3 @@ export class Main {
     }[this.templateToShow];
   }
 }
-//   sendPicture(image){
-//     this.counter++;
-//     //var image = image;
-//     var userId = this.userService.getUserId();
-//     //console.log(userId);
-//    // console.log(this.uploader.queue[this.counter].file);
-//    // this.mainService.postPicture(this.uploader.queue[0].file)
-//       .subscribe(
-//         pictures => {console.log('hey');
-//                  },
-//         error =>  this.errorMessage = <any>error
-//       )
-//   }
-// }
