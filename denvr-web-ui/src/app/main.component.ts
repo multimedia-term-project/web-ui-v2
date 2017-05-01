@@ -38,6 +38,7 @@ import {picture} from './picture';
             <div class="panel-body" style="overflow:scroll; height:75%;">
               <sebm-google-map [latitude]="lat" [longitude]="lng">
                 <sebm-google-map-marker [latitude]="lat" [longitude]="lng"></sebm-google-map-marker>
+                <sebm-google-map-marker [latitude]="38.258596" [longitude]="-85.753649"></sebm-google-map-marker>
               </sebm-google-map>
             </div>
           </div>
@@ -60,8 +61,8 @@ export class Main {
   @ViewChild('map') map: TemplateRef<any>;
   private templateToShow: string = "images"
 
-  public lat: number = 39.7739;
-  public lng: number = -86.1763;
+  public lat: number = 39.809722;
+  public lng: number = -86.181667;
 
 
   constructor(private userService: userService, private mainService: mainService) {
