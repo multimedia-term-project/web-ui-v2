@@ -29,6 +29,17 @@ import {picture} from './picture';
                     .catch(this.handleError);
   }
 
+  postPicture(pictureFile, user): Observable<picture>{
+    var userUrl = 'http://52.15.89.214:8002/image/:H1KTpBEk-';
+    let headers = new Headers({ 'Content-Type': 'undefined' });
+    let options = new RequestOptions({ headers: headers });
+    console.log(userUrl);
+    return this.http.post(userUrl, pictureFile, options)
+                 .map(res => res.json())
+                 .catch(this.handleError);
+}
+
+
   private extractData(res: Response) {
 
   //  console.log(res);

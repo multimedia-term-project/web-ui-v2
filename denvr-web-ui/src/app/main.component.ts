@@ -2,6 +2,8 @@ import { Component, TemplateRef, ViewChild} from '@angular/core'
 import {userService} from './user.service';
 import {mainService} from './main.service';
 import {picture} from './picture';
+import { FileUploader } from 'ng2-file-upload';
+
 
 @Component({
   selector: 'main',
@@ -18,7 +20,7 @@ import {picture} from './picture';
       <div class="col-md-8">
           <div class="panel panel-default">
             <div class="panel-body" style="overflow:scroll; height:75%;">
-
+            <!--
             <div *ngFor="let picture of pictures">
                 <div class ="gallery">
                 <a target = {{picture.url}} href = {{picture.url}}>
@@ -26,6 +28,16 @@ import {picture} from './picture';
                 </a>
                 </div>
             </div>
+
+            -->
+            <form id="login-form" method="POST" action="/login">
+              <label>Denvr</label>
+              <br>
+              Send File:<br>
+              <input type="file" ng2FileSelect [uploader]="uploader" />
+              <button class="login" (click)="sendPicture(uploader);">send</button>
+
+            </form>
 
 
             <!--
@@ -39,8 +51,8 @@ import {picture} from './picture';
                   <img src="http://kingofwallpapers.com/face/face-051.jpg" alt="Forest" width="600" height="400">
                 </a>
               </div>
-                -->
 
+                -->
 
             </div>
           </div>
@@ -67,6 +79,9 @@ import {picture} from './picture';
 })
 
 export class Main{
+  //URL: "http://localhost:4200/home/";
+  //public uploader:FileUploader = new FileUploader({url: "http://localhost:4200/home/"});
+  //public uploader:FileUploader = new FileUploader({url: URL});
   pictures: picture[];
   errorMessage: string;
   @ViewChild('images') images : TemplateRef<any>;
@@ -75,11 +90,16 @@ export class Main{
 
   public lat: number = 39.7739;
   public lng: number = -86.1763;
+  public uploader:FileUploader = new FileUploader({url: "http://localhost:4200/home/"})
 
 
-  constructor(private userService: userService, private mainService:mainService){}
+  constructor(private userService: userService, private mainService:mainService){
 
-  ngOnInit() { this.getPictures(); }
+  }
+
+  ngOnInit() { this.getPictures();
+   //public uploader:FileUploader = new FileUploader({url: "http://localhost:4200/home/"})
+ }
   getPictures(){
           //this.pictures[1].imageUrl = "alksdjf";
          var userId = this.userService.getUserId();
@@ -105,6 +125,14 @@ export class Main{
       "images": this.images,
       "map": this.map
     }[this.templateToShow];
+  }
+
+  sendPicture(image){
+    //var image = image;
+    var userId = this.userService.getUserId();
+    //console.log(userId);
+    console.log(this.uploader.queue[0].file);
+    this.mainService.postPicture(this.uploader.queue[0].file,userId);
   }
 
 
