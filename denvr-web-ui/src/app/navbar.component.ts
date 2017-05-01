@@ -7,8 +7,6 @@ import { Component,  TemplateRef, ViewChild } from '@angular/core';
       <ng-sidebar [(opened)]="_opened" [showBackdrop]="true" [closeOnClickOutside]="true" [closeOnClickBackdrop]="true">
         <ul class="sidebar-nav nav">
           <li><a href="/login">Sign Out</a></li>
-          <li><a href="#">Update Info</a></li>
-          <li><a href="#">Delete Photo</a></li>
         </ul>
       </ng-sidebar>
       <nav class="navbar navbar-inverse navbar-fixed-top">
