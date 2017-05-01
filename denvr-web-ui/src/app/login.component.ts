@@ -7,8 +7,9 @@ import 'rxjs/add/operator/map';
 import { user } from './user';
 import { Headers, RequestOptions } from '@angular/http';
 import {serverResponse} from './serverResponse';
-import {loginService} from './login.service'
-import {userService} from './user.service'
+import {loginService} from './login.service';
+import {userService} from './user.service';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -31,22 +32,28 @@ import {userService} from './user.service'
   providers: [loginService],
 })
 export class loginComponent {
-    constructor (private loginService: loginService, private userService:userService) {}
+    constructor (private loginService: loginService, private userService:userService, private router:Router) {}
     signIn(userName, password){
       var errorMessage;
       var user = {'email':userName, 'password':password};
-      var userId = this.userService.getUserId();
-      console.log("user id: " + userId);
       this.loginService.getUser(user)
             .subscribe(
                 res => {var data = new serverResponse('',''),
                         data = res;
-                        console.log(data)},
+                        this.loggedIn(data);
+                      },
                 error =>  errorMessage = <any>error
       );
 
 
 
 
+  }
+  loggedIn(data){
+    this.userService.setUserId(data.userId);
+    //console.log('set');
+    var user = this.userService.getUserId();
+    //console.log(user);
+    this.router.navigate(['/home', user]);
   }
 }
