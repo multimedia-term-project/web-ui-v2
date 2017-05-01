@@ -30,14 +30,15 @@ import { FileUploader } from 'ng2-file-upload';
             </div>
 
             -->
-            <form id="login-form" method="POST" action="/login">
-              <label>Denvr</label>
-              <br>
-              Send File:<br>
-              <input type="file" ng2FileSelect [uploader]="uploader" />
-              <button class="login" (click)="sendPicture(uploader);">send</button>
+            <!--<form id="login-form" method="POST" action="/login">-->
+              <!--<label>Denvr</label>-->
+              <!--<br>-->
+              <!--Send File:<br>-->
+              <!--<input type="file" ng2FileSelect [uploader]="uploader" />-->
+              <!--<button class="login" (click)="sendPicture(uploader);">send</button>-->
 
-            </form>
+            <!--</form>-->
+              <uploader></uploader>
 
 
             <!--

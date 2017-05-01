@@ -16,6 +16,7 @@ import { NouisliderModule } from 'ng2-nouislider';
 import { NavbarComponent } from './navbar.component';
 import { SidebarModule } from 'ng-sidebar';
 import { FileDropDirective, FileSelectDirective } from 'ng2-file-upload';
+import { Uploader } from './upload.component'
 
 //import {angularFileUpload} from 'angularFileUpload';
 
@@ -44,7 +45,8 @@ const appRoutes: Routes = [
     Slider,
     Main,
     FileDropDirective,
-    FileSelectDirective
+    FileSelectDirective,
+    Uploader
   ],
   imports: [
     BrowserModule,
