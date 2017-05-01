@@ -68,7 +68,6 @@ export class Main {
 
   constructor(private userService: userService, private mainService: mainService) {
     this.counter = -1;
-    console.log(userService.getRange());
   }
 
   ngOnInit() {
@@ -79,7 +78,7 @@ export class Main {
   getPictures() {
     //this.pictures[1].imageUrl = "alksdjf";
     var userId = this.userService.getUserId();
-    //console.log(userId);
+    console.log("Get Pictures");
     this.mainService.getPicture(userId)
       .subscribe(
         pictures => {
@@ -92,10 +91,12 @@ export class Main {
 
 
   changeTemplate() {
+    this.getPictures();
     this.templateToShow = (this.templateToShow == "images" ? "map" : "images");
   }
 
   getTemplate() {
+
     return {
       "images": this.images,
       "map": this.map
