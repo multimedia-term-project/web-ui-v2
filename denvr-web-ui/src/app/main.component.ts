@@ -77,7 +77,7 @@ import { Component, TemplateRef, ViewChild} from '@angular/core'
 export class Main{
   @ViewChild('images') images : TemplateRef<any>;
   @ViewChild('map') map: TemplateRef<any>;
-  private templateToShow : string = "images"
+  private templateToShow : string = "images";
 
   public lat: number = 39.7739;
   public lng: number = -86.1763;

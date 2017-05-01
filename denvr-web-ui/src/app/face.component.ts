@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
           <div class="col-md-2">
           <div class="panel panel-default">
             <div class="panel-body" style="overflow:scroll; height:600px;">
-              Faces<br>
+              <p>Faces</p>
               <img src="http://kingofwallpapers.com/face/face-051.jpg"><br><br>
               <img src="http://kingofwallpapers.com/face/face-051.jpg"><br><br>
               <img src="http://kingofwallpapers.com/face/face-051.jpg"><br><br>

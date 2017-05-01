@@ -21,7 +21,7 @@ import { Component } from '@angular/core';
   
           <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="#" class="fa fa-plus"> Add Image</a></li>
+              <li><a href="/home" class="fa fa-plus"> Add Image</a></li>
             </ul>
           </div>
         </div>

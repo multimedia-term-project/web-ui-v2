@@ -20,7 +20,7 @@ import {Component} from '@angular/core';
   ],
 })
 export class Slider{
-  minDate = new Date(1994, 12, 10);
+  minDate = new Date(2015, 12, 10);
   public minVal: number = this.minDate.getTime();
   maxDate = new Date(2017, 12, 10);
   public maxVal: number = this.maxDate.getTime();
@@ -50,5 +50,5 @@ export class Slider{
     }
   };
 
-  public someRange : number[] = [ new Date('1995').getTime(), new Date('2000').getTime()];
+  public someRange : number[] = [ new Date().getTime(), new Date().getTime()+2592000000];
 }
