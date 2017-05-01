@@ -19,13 +19,13 @@ import { SidebarModule } from 'ng-sidebar';
 const appRoutes: Routes = [
   { path: 'register', component: registerComponent },
 
-  { path: 'home', component: homeComponent },
+  { path: 'home/:id', component: homeComponent },
 
   { path: 'login', component: loginComponent},
   { path: '',
    redirectTo: '/login',
    pathMatch: 'full'
- }
+ },
 
 ];
 
