@@ -2,7 +2,7 @@ import { Component, TemplateRef, ViewChild} from '@angular/core'
 import {userService} from './user.service';
 import {mainService} from './main.service';
 import {picture} from './picture';
-import { FileUploader } from 'ng2-file-upload';
+//import { FileUploader } from 'ng2-file-upload';
 
 
 @Component({
@@ -20,16 +20,13 @@ import { FileUploader } from 'ng2-file-upload';
       <div class="col-md-8">
           <div class="panel panel-default">
             <div class="panel-body" style="overflow:scroll; height:75%;">
-                             <div *ngFor="let picture of pictures">
-                  <img src =   {{picture.url}}><br>
-                 </div>
-            <!--<div *ngFor="let picture of pictures">-->
-                <!--<div class ="gallery">-->
-                <!--<a target = {{picture.url}} href = {{picture.url}}>-->
-                  <!--<img src = {{picture.url}} width = "10%">-->
-                <!--</a>-->
-                <!--</div>-->
-            <!--</div>-->
+            <div *ngFor="let picture of pictures">
+                <div class ="gallery">
+                <a target = {{picture.url}} href = {{picture.url}}>
+                  <img src = {{picture.url}} width = "10%">
+                </a>
+                </div>
+            </div>
             </div>
           </div>
       </div>
@@ -54,48 +51,46 @@ import { FileUploader } from 'ng2-file-upload';
   providers: [mainService]
 })
 
-export class Main{
-  //URL: "http://localhost:4200/home/";
-  //public uploader:FileUploader = new FileUploader({url: "http://localhost:4200/home/"});
-  //public uploader:FileUploader = new FileUploader({url: URL});
+export class Main {
+
   pictures: picture[];
   errorMessage: string;
-  counter:number;
-  @ViewChild('images') images : TemplateRef<any>;
+  counter: number;
+  @ViewChild('images') images: TemplateRef<any>;
   @ViewChild('map') map: TemplateRef<any>;
-  private templateToShow : string = "images"
+  private templateToShow: string = "images"
 
   public lat: number = 39.7739;
   public lng: number = -86.1763;
-  public uploader:FileUploader = new FileUploader({url: "http://localhost:4200/home/"})
 
 
-  constructor(private userService: userService, private mainService:mainService){
+  constructor(private userService: userService, private mainService: mainService) {
     this.counter = -1;
 
   }
 
-  ngOnInit() { this.getPictures();
-   //public uploader:FileUploader = new FileUploader({url: "http://localhost:4200/home/"})
- }
-  getPictures(){
-          //this.pictures[1].imageUrl = "alksdjf";
-         var userId = this.userService.getUserId();
-         //console.log(userId);
-         this.mainService.getPicture(userId)
-               .subscribe(
-                   pictures => {this.pictures = pictures;
-                                console.log(this.pictures[1].url);
-                            },
-                   error =>  this.errorMessage = <any>error
-        );
-    }
+  ngOnInit() {
+    this.getPictures();
 
+  }
 
+  getPictures() {
+    //this.pictures[1].imageUrl = "alksdjf";
+    var userId = this.userService.getUserId();
+    //console.log(userId);
+    this.mainService.getPicture(userId)
+      .subscribe(
+        pictures => {
+          this.pictures = pictures;
+          console.log(this.pictures[1].url);
+        },
+        error => this.errorMessage = <any>error
+      );
+  }
 
 
   changeTemplate() {
-    this.templateToShow = (this.templateToShow == "images"? "map":"images");
+    this.templateToShow = (this.templateToShow == "images" ? "map" : "images");
   }
 
   getTemplate() {
@@ -103,19 +98,5 @@ export class Main{
       "images": this.images,
       "map": this.map
     }[this.templateToShow];
-  }
-
-  sendPicture(image){
-    this.counter++;
-    //var image = image;
-    var userId = this.userService.getUserId();
-    //console.log(userId);
-    console.log(this.uploader.queue[this.counter].file);
-    this.mainService.postPicture(this.uploader.queue[0].file)
-      .subscribe(
-        pictures => {console.log('hey');
-                 },
-        error =>  this.errorMessage = <any>error
-      )
   }
 }
